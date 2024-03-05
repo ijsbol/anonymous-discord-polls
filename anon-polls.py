@@ -23,7 +23,6 @@ from disnake import (
     Intents,
     MessageInteraction,
     NotFound,
-    PartialMessageable,
     Status,
     TextChannel,
     Thread,
