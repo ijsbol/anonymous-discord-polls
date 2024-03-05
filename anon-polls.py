@@ -9,6 +9,7 @@ from typing import (
     List,
     Optional,
     Tuple,
+    Union,
     cast,
 )
 
@@ -43,8 +44,8 @@ from sqlite3 import connect as sync_connect
 load_dotenv()
 
 
-DISCORD_BOT_TOKEN: Final[None | str] = getenv("DISCORD_BOT_TOKEN")
-DATABASE_NAME: Final[None | str] = getenv("DATABASE_NAME")
+DISCORD_BOT_TOKEN: Final[Optional[str]] = getenv("DISCORD_BOT_TOKEN")
+DATABASE_NAME: Final[Optional[str]] = getenv("DATABASE_NAME")
 
 assert DISCORD_BOT_TOKEN is not None
 assert DATABASE_NAME is not None
@@ -58,7 +59,7 @@ DURATION_REGEX_PATTERNS: Final[List[Tuple[str, int]]] = [
 ]
 
 
-sqlite_connection: bool | Connection = False
+sqlite_connection: Union[bool, Connection] = False
 
 
 def check_sqlite_connection() -> None:
