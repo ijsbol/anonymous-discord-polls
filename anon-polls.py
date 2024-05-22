@@ -162,14 +162,16 @@ async def check_expired_polls() -> None:
 
         try:
             message = await channel.fetch_message(message_id)
-        except NotFound or Forbidden or HTTPException:
+        except:
             continue
 
         view = View()
         for option, votes in votes_data_dict.items():
             view.add_item(Button(label=f"{option}: {votes}"))
-
-        await message.edit(view=view)
+        try:
+            await message.edit(view=view)
+        except:
+            continue
 
     # Delete expired polls and vote data.
     query_2 = """
