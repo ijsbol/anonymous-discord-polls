@@ -51,6 +51,11 @@ assert DISCORD_BOT_TOKEN is not None
 assert DATABASE_NAME is not None
 
 
+if getenv("PROXY_URL"):
+    from disnake.http import Route
+    Route.BASE = getenv("PROXY_URL") 
+
+
 DURATION_REGEX_PATTERNS: Final[List[Tuple[str, int]]] = [
     (r"([0-9]+)(seconds|second|secs|sec|s)", 1),
     (r"([0-9]+)(minutes|minute|mins|min|m)", 60),
