@@ -16,7 +16,7 @@ A simple anonymous poll bot for Discord. Bot admins are unable to tell who voted
 # Public bot
 For those of you who just want to use it without figuring out what the hell a Linux is:
 
-🔗 Invite link: https://api.scrumpbot.com/i/1214561094333374494/18432
+🔗 Invite link: https://discord.com/oauth2/authorize?client_id=1214561094333374494&scope=bot&permissions=18432
 
 
 
